@@ -8,15 +8,14 @@ export default function Newsletter(){
     <Center>
     <Box bg="white" w="811px" h="229px" p={4} borderRadius="30">
         <Center>
-            <Heading size="lg" paddingTop="20px" paddingBottom="10px" color="#FFFFFF">Be In The Know</Heading>
+            <Heading size="lg" paddingTop="20px" paddingBottom="10px" color="#000000">Be In The Know</Heading>
         </Center>
         <Center>
-            <Text color="#B50000" paddingBottom="20px">Be notified when something new is added</Text>
+            <Text color="#000000" paddingBottom="20px">Be notified when something new is added</Text>
         </Center>
-       
-        <InputGroup>
+       <Center>
+        <InputGroup width="459.06px">
             <Input
-            width="459.06px"
             placeholder='Email'
             borderRadius="30"
             />
@@ -24,7 +23,7 @@ export default function Newsletter(){
                 <Button borderRadius="30">Get Updates</Button>
             </InputRightElement>
         </InputGroup>
-       
+        </Center>
     </Box>
     </Center>
     );
