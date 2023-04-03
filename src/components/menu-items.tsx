@@ -9,17 +9,17 @@ export default function MenuItems(): JSX.Element{
             <MenuButton w="100px" style={{color: "#FFFFFF", fontWeight:"bold"}}>
                 Genre
             </MenuButton>
-            <MenuList>
-                <MenuItem fontWeight="bold">Mystery</MenuItem>
-                <MenuItem fontWeight="bold">Horror</MenuItem>
-                <MenuItem fontWeight="bold">Romance</MenuItem>
-                <MenuItem fontWeight="bold">Cultural</MenuItem>
-                <MenuItem fontWeight="bold">Thriller/Psychological</MenuItem>
-                <MenuItem fontWeight="bold">All</MenuItem>
+            <MenuList bgColor="#7A7878" borderColor="#7A7878">
+                <MenuItem fontWeight="bold" bgColor="#7A7878" color="#FFFFFF" _hover={{bg: "#87AD69"}}>Mystery</MenuItem>
+                <MenuItem fontWeight="bold" bgColor="#7A7878" color="#FFFFFF" _hover={{bg: "#87AD69"}}>Horror</MenuItem>
+                <MenuItem fontWeight="bold" bgColor="#7A7878" color="#FFFFFF" _hover={{bg: "#87AD69"}}>Romance</MenuItem>
+                <MenuItem fontWeight="bold" bgColor="#7A7878" color="#FFFFFF" _hover={{bg: "#87AD69"}}>Cultural</MenuItem>
+                <MenuItem fontWeight="bold" bgColor="#7A7878" color="#FFFFFF" _hover={{bg: "#87AD69"}}>Thriller/Psychological</MenuItem>
+                <MenuItem fontWeight="bold" bgColor="#7A7878" color="#FFFFFF" _hover={{bg: "#87AD69"}}>All</MenuItem>
             </MenuList>
         </Menu>
         <Menu>
-            <MenuButton w="100px" style={{color: "#FFFFFF", fontWeight:"bold"}}>Merch</MenuButton>
+            <MenuButton w="100px" style={{color: "#FFFFFF", fontWeight:"bold"}} onClick={()=>{console.log("Hello")}}>Merch</MenuButton>
         </Menu>
         <Menu>
             <MenuButton w="100px" style={{color: "#FFFFFF", fontWeight:"bold"}}>About</MenuButton>
