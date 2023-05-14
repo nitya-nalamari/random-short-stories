@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "medias",
+  "info": {
+    "singularName": "media",
+    "pluralName": "medias",
+    "displayName": "Media",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "story_media": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "story": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::story.story"
+    }
+  }
+}
