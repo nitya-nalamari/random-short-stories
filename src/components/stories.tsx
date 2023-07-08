@@ -5,9 +5,11 @@ import FeaturedStories from "./featured-stories";
 import RandomStories from "./random-stories";
 
 export default function Stories(): JSX.Element {
-    return (<>
-        <NewStories />
-        <FeaturedStories />
-        <RandomStories />
-    </>);
+  return (
+    <>
+      <NewStories />
+      <FeaturedStories />
+      <RandomStories />
+    </>
+  );
 }

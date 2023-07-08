@@ -9,21 +9,32 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@auth0/nextjs-auth0": "^2.6.3",
     "@chakra-ui/icons": "^2.0.17",
     "@chakra-ui/react": "^2.5.4",
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
+    "@grammarly/editor-sdk-react": "^2.5.1",
     "@types/node": "18.15.10",
     "@types/react": "18.0.30",
     "@types/react-dom": "18.0.11",
-    "eslint": "8.36.0",
     "eslint-config-next": "13.2.4",
     "framer-motion": "^10.9.1",
     "moment": "^2.29.4",
     "next": "13.2.4",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-icons": "^4.8.0",
-    "typescript": "^4.9.5"
+    "react-icons": "^4.8.0"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.61.0",
+    "eslint": "^8.44.0",
+    "eslint-config-standard-with-typescript": "^36.0.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-n": "^15.7.0",
+    "eslint-plugin-promise": "^6.1.1",
+    "eslint-plugin-react": "^7.32.2",
+    "prettier": "3.0.0",
+    "typescript": "^5.1.6"
   }
 }
