@@ -5,10 +5,13 @@ export default function Page({ message }: any): JSX.Element {
 }
 
 export async function getStaticProps() {
-  const res = await fetch("http://127.0.0.1:1337/api/admin-writers");
+  //%pagination[start]=0&pagination[limit]=3
+  const res = await fetch(
+    "http://127.0.0.1:1337/api/stories?populate[0]=genres&pagination[start]=0&pagination[limit]=3"
+  );
   let data = "";
   await res.json().then((record: any) => {
-    data = record.data[0].attributes.first_name;
+    data = JSON.stringify(record.data);
   });
 
   if (!res) {

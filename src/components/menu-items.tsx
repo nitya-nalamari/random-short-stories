@@ -1,11 +1,32 @@
 import React from "react";
 
-import { Menu, MenuButton, MenuList, MenuItem, Stack } from "@chakra-ui/react";
+import {
+  Menu,
+  MenuButton,
+  MenuList,
+  MenuItem,
+  Stack,
+  Text,
+  Spinner,
+} from "@chakra-ui/react";
 
 import { useRouter } from "next/router";
+import { useUser } from "@auth0/nextjs-auth0/client";
 
 export default function MenuItems(): JSX.Element {
   const router = useRouter();
+
+  const { user, error, isLoading } = useUser();
+
+  console.log({ user: user });
+  if (isLoading) {
+    return <Spinner />;
+  }
+
+  if (error) {
+    return <Text>Error during login!</Text>;
+  }
+
   return (
     <Stack
       direction={["column", "row"]}
@@ -110,6 +131,32 @@ export default function MenuItems(): JSX.Element {
           Contact Us
         </MenuButton>
       </Menu>
+      {!user && (
+        <Menu>
+          <MenuButton
+            w="100px"
+            style={{ color: "#FFFFFF", fontWeight: "bold" }}
+            onClick={() => {
+              router.push("/api/auth/login");
+            }}
+          >
+            Login
+          </MenuButton>
+        </Menu>
+      )}
+      {user && (
+        <Menu>
+          <MenuButton
+            w="100px"
+            style={{ color: "#FFFFFF", fontWeight: "bold" }}
+            onClick={() => {
+              router.push("/api/auth/logout");
+            }}
+          >
+            Logout
+          </MenuButton>
+        </Menu>
+      )}
     </Stack>
   );
 }

@@ -8,7 +8,6 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <UserProvider>
       <ChakraProvider>
-        <link rel="icon" href="/icons8-coco-tree-16.png" sizes="any" />
         <Component {...pageProps} />
       </ChakraProvider>
     </UserProvider>

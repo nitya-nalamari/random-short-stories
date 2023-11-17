@@ -8,7 +8,8 @@ import Newsletter from "./news-letter";
 
 import Layout from "./layout";
 
-export default function MainPage(): JSX.Element {
+export default function MainPage({ data }: any): JSX.Element {
+  console.log({ data: JSON.stringify(data) });
   return (
     <Layout>
       <GridItem
@@ -19,7 +20,7 @@ export default function MainPage(): JSX.Element {
           paddingBottom: "40px",
         }}
       >
-        <Stories />
+        <Stories stories={data} />
       </GridItem>
       <GridItem area={"be-in-the-know"} paddingBottom="80px">
         <Newsletter />

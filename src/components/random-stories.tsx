@@ -16,7 +16,7 @@ import {
 
 import { motion } from "framer-motion";
 
-export default function RandomStories() {
+export default function RandomStories({ randomStories }: any) {
   const storyArray = [
     "/water.jpeg",
     "/sunny.jpeg",
@@ -24,9 +24,21 @@ export default function RandomStories() {
     "/underwater.jpeg",
   ];
 
-  const randomStories = storyArray.map((record) => {
+  const getTagInfo = (tags: any) => {
+    const tagInfo = tags.map((genre: any) => {
+      return (
+        <Tag size="sm" variant="solid">
+          <TagLabel>{genre.attributes.type}</TagLabel>
+        </Tag>
+      );
+    });
+
+    return tagInfo;
+  };
+
+  const randomStoriesData = randomStories.map((record: any) => {
     return (
-      <GridItem w="100%" style={{ perspective: "1000px" }}>
+      <GridItem w="100%" style={{ perspective: "1000px" }} key={record.id}>
         <Card
           w="250px"
           h="395px"
@@ -51,7 +63,7 @@ export default function RandomStories() {
             }}
           >
             <Image
-              src={record}
+              src={storyArray[3]}
               alt="water"
               borderTopLeftRadius="30"
               borderTopRightRadius="30"
@@ -59,21 +71,10 @@ export default function RandomStories() {
             />
             <CardBody>
               <Stack mt="2" spacing="3">
-                <Heading size="md">Living room Sofa</Heading>
-                <Text>
-                  This sofa is perfect for modern tropical spaces, baroque
-                  inspired spaces, earthy toned spaces.
-                </Text>
+                <Heading size="md">{record.attributes.title}</Heading>
+                <Text>{record.attributes.card_front_summary}</Text>
                 <HStack spacing={4}>
-                  <Tag size="sm" variant="solid">
-                    <TagLabel>Tag 1</TagLabel>
-                  </Tag>
-                  <Tag size="sm" variant="solid">
-                    <TagLabel>Tag 2</TagLabel>
-                  </Tag>
-                  <Tag size="sm" variant="solid">
-                    <TagLabel>Tag 3</TagLabel>
-                  </Tag>
+                  {getTagInfo(record.attributes.genres.data)}
                 </HStack>
               </Stack>
             </CardBody>
@@ -93,18 +94,10 @@ export default function RandomStories() {
           >
             <CardBody>
               <Stack mt="2" spacing="3">
-                <Heading size="md">Living room Sofa</Heading>
-                <Text>Back of the card with story with description</Text>
+                <Heading size="md">{record.attributes.title}</Heading>
+                <Text>{record.attributes.card_back_summary}</Text>
                 <HStack spacing={4}>
-                  <Tag size="sm" variant="solid">
-                    <TagLabel>Tag 1</TagLabel>
-                  </Tag>
-                  <Tag size="sm" variant="solid">
-                    <TagLabel>Tag 2</TagLabel>
-                  </Tag>
-                  <Tag size="sm" variant="solid">
-                    <TagLabel>Tag 3</TagLabel>
-                  </Tag>
+                  {getTagInfo(record.attributes.genres.data)}
                 </HStack>
               </Stack>
             </CardBody>
@@ -124,7 +117,7 @@ export default function RandomStories() {
         Random
       </Heading>
       <Grid templateColumns="repeat(5, 1fr)" gap={20} paddingBottom="50px">
-        {randomStories}
+        {randomStoriesData}
       </Grid>
     </>
   );

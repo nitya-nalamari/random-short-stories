@@ -19,7 +19,7 @@ export default function PrivacyPolicy() {
       <Link color="#FFFFFF" onClick={onOpen}>
         Privacy policy
       </Link>
-      <Modal isOpen={isOpen} onClose={onClose}>
+      <Modal isCentered isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
         <ModalContent>
           <ModalHeader>Privacy Policy</ModalHeader>

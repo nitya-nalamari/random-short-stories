@@ -1,7 +1,6 @@
 import React from "react";
 
-import { Grid, GridItem, Heading, Link } from "@chakra-ui/react";
-import MenuItems from "./menu-items";
+import { Heading, Link } from "@chakra-ui/react";
 
 export default function Header(): JSX.Element {
   return (

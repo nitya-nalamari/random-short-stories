@@ -19,7 +19,7 @@ export default function TermsOfUse() {
       <Link color="#FFFFFF" onClick={onOpen}>
         Terms of use
       </Link>
-      <Modal isOpen={isOpen} onClose={onClose}>
+      <Modal isCentered isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
         <ModalContent>
           <ModalHeader>Terms of use</ModalHeader>
